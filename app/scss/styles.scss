@@ -23,7 +23,6 @@ $breakpoint-lg: 717px;
 @import "css-reset";
 @import "colors";
 @import "type";
-@import "highcharts";
 
 .chart-area {
   // background-color: lightgray;
@@ -44,18 +43,48 @@ $breakpoint-lg: 717px;
     display: none;
   }
 
-  & .chart-container {
+  & #chart-container_wrapper {
     width: 100%;
-    height: 300px;
+    // height: 300px;
     margin-top: -10px;
-    @include sm-md-xl {
-      height: 400px;
+    margin-bottom: 30px;
+    @include x-small {
+      margin-bottom: 20px;
     }
   }
 
   & .grow-logo {
     width: 214px;
     margin-top: 20px;
+  }
+
+  .dataTables_info {
+    display: none;
+  }
+
+  thead tr th  {
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 600;
+    line-height: 14px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+    background-color: rgba($green-secondary-2,0.5);
+  }
+
+  table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: rgba($green-secondary-2,0.5);
+  }
+
+  table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+    border: none;
+  }
+
+  table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: white;
   }
   
 }
